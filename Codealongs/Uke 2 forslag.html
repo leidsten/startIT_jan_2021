@@ -6,12 +6,26 @@
     <title>CodeAlong Uke 2 - vår første CodeAlong!</title>
 </head>
 <body>
-    <div></div>
+    <div id="output" onclick="clickHere(this)"></div>
 
 <script>
     //this, onclick
+    const outputDiv = document.getElementById("output");
+    let innhold =  "() - ()";
+    outputDiv.innerHTML = innhold;
 
+  
+
+function clickHere(clickedDiv){
+    innhold = `
+    (x) . (x)
+    `;
     
+    clickedDiv.innerHTML = innhold;
+    
+
+}
+
 </script>
 </body>
 </html>
