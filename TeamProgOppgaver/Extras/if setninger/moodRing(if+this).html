@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <style>
+        #colorShower{
+            border: 55px dashed black;
+            border-radius: 50%;
+            height: 200px;
+            width: 200px;
+        }
+        </style>
+    </head>
+    <body>
+        <select onchange="changeColorDependingOnMood(this)">
+            <option>Happy</option>
+            <option>Sad</option>
+            <option>Angry</option>
+            <option>Tired</option>
+        </select>
+
+        <div id="colorShower"></div>
+
+        <script>
+        const colorDiv = document.getElementById("colorShower");
+
+        function changeColorDependingOnMood(recievedMood){
+            if(recievedMood.value == "Happy"){colorDiv.style.borderColor = "green";}
+            if(recievedMood.value == "Sad"){colorDiv.style.borderColor = "blue";}
+            if(recievedMood.value == "Angry"){colorDiv.style.borderColor = "red";}
+            if(recievedMood.value == "Tired"){colorDiv.style.borderColor = "purple";}
+        }
+
+        </script>
+    </body>
+</html>

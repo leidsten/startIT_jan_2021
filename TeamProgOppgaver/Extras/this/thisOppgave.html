@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        div {
+            border: 2px solid black;
+            height: 50px;
+            width: 150px;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            float: left;
+        }
+
+        .answerBox {
+            clear: left;
+            width: 500px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Bruk av This!</title>
+</head>
+
+<body>
+    <div onclick="addToOutput(this)">Hei</div>
+    <div onclick="addToOutput(this)">På</div>
+    <div onclick="addToOutput(this)">Deg</div>
+
+    <div class="answerBox" id="output"></div>
+    <script>
+        const outputDiv = document.getElementById("output");
+
+        function addToOutput(clickedText) {
+            outputDiv.innerHTML += clickedText.innerHTML + " ";
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BossFight!</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+        const outputDiv = document.getElementById("output");
+
+        let playerObj = {
+            hp: 100,
+            attackPower: 15,
+        };
+
+        let bossObj = {
+            hp: 250,
+            attackPower: 20,
+        };
+
+        let someOneDied = "";
+
+
+
+        show();
+        function show(){
+            outputDiv.innerHTML = `
+            boss hp left: ${bossObj.hp} <br>
+            your hp left: ${playerObj.hp} <br>
+            <button onclick="playerAttack()"> attack! </button> <br>
+            ${someOneDied}
+            `;
+            
+        }
+
+        function playerAttack(){
+            let crit = Math.round(Math.random() * 10);
+            let hitStrength = crit > 8 ? playerObj.attackPower * 2 
+                                       : playerObj.attackPower;
+            
+           if(!checkIfPlayerDies() && bossObj.hp > 0){
+            bossObj.hp = bossObj.hp - hitStrength;
+           }
+
+            show();
+            checkIfPlayerDies();
+            bossAttack();
+        }
+
+
+
+        function bossAttack(){
+            let hitCalc = Math.round(Math.random() * 10);
+            let doesAttackttackHit = hitCalc > 7 ? true : false; 
+
+            if(!checkIfBossDies() && doesAttackttackHit){
+                playerObj.hp = playerObj.hp - bossObj.attackPower;  
+            }
+            show();
+            checkIfBossDies();
+        }
+
+
+
+        function checkIfPlayerDies(){
+            if(playerObj.hp <= 0){
+                playerObj.hp = 0;
+                someOneDied = " You died."
+                return true;
+            }
+            show();
+        }
+
+
+        function checkIfBossDies(){
+            if(bossObj.hp <= 0){
+                bossObj.hp = 0;
+                someOneDied = " The boss died - congrats! You won!"
+                return true;
+            }
+            show();
+        }
+
+
+    </script>
+    
+</body>
+</html>

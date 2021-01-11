@@ -1,0 +1,13 @@
+**Første teamoppgave: Rutenett!**
+Lag et 3x3 rutenett ved hjelp av DIVs, HTML og CSS - hvor rutene er like store.
+Unngå å bruke <br> tags etc for linjebytte - bruk CSS i seg selv eller CSS grid :)
+
+Velg selv hva dere legger inne i rutene; farger, bilder eller noe helt annet.
+Gå sammen i teamene deres - planlegg og jobb sammen for å finne en løsning.
+Blir dere tidlig ferdig, så bruk resten av TP øktene til å slippe kreativiteten løs og "jazze opp" oppgaven 
+
+Vi viser fram resultatene via skjermdeling i General neste tirsdag samme tid
+Gleder meg til å se resultatene!
+Hint:
+||Float||
+||Clear||

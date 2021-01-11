@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        button{
+            border-radius: 50%;
+            height: 50px;
+            width: 70px;
+            background-color:lightskyblue;
+        }
+
+        h1{
+            color:maroon;
+        }
+        h2{
+            color:mediumorchid;
+        }
+        h3{
+            color:mediumslateblue;
+        }
+    </style>
+    <title>Change Headersize with buttons!</title>
+</head>
+<body>
+    <button id="h1" onclick="resizeHeader(this)">Big</button> 
+    <button id="h2" onclick="resizeHeader(this)">Medium</button> 
+    <button id="h3" onclick="resizeHeader(this)">Small</button>
+
+    <div id="output">
+        <h1>Change This Header's Size</h1>
+    </div>
+
+    <script>
+        const outputDiv = document.getElementById("output");
+
+       function resizeHeader(buttonClicked){
+        outputDiv.innerHTML = "<"+buttonClicked.id +"> Change This Header's Size </"+ buttonClicked.id + ">";
+       }
+    </script>
+</body>
+</html>

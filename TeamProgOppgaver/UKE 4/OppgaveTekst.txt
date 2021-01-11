@@ -1,0 +1,13 @@
+**Teamoppgave: WordChooser Story!**
+Lag en liten historie med noen manglende ord.
+Lag en liste over ord som kan klikkes på - og la disse ordene fylle tomrommene i historien når de blir valgt.
+Kjør på med å bruke MVC - jo oftere dere får brukt det - jo tryggere blir dere på det;)
+
+Gå sammen i teamene deres - planlegg og jobb sammen for å finne en løsning - pass på at alle får bidratt! :)
+Blir dere tidlig ferdig, så bruk resten av TP øktene (tirsdag, onsdag, torsdag) til å slippe kreativiteten løs og "jazze opp" oppgaven 
+Gleder meg til å se resultatene neste tirsdag!
+Hint:
+||This||
+||Onclick||
+||Variabler||
+||innerHTML||

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DayOfTheWeekQuote</title>
+    <style>
+      
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 50px;
+    background: #fff;
+}
+
+#container{
+    width: 650px;
+    height: 350px;
+    background-color: #e0bb89;
+    margin: auto;
+    border-radius: 30px;
+}
+
+h1{
+    font-size: 47px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    margin-left: 200px;
+    border: 1px solid saddlebrown;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+#weekday{
+    font-size: 80px;
+    color: saddlebrown;
+    font-weight: 800;
+    margin-left: 170px;
+}
+
+#phrase{
+    font-size: 40px;
+    color: #ffd86b;
+    font-weight: 800;
+    margin-left:50px;
+}</style>
+</head>
+<body>
+
+        <div id="container">
+                <h1>Today is:</h1>
+                <div>
+                    <span id="weekday">
+                        Display day of the week.
+                    </span></br>
+                    <span id="phrase">Display a quote</span>
+                </div>
+            </div>
+    
+</body>
+</html>
+
+
+<script>
+let weekdayDiv = document.getElementById('weekday');
+let quoteDiv = document.getElementById('phrase');
+let date = new Date();
+let dayOfWeekNumber = date.getDay();
+let nameOfDay;
+let quote;
+
+getDayNameAndQuote();
+function getDayNameAndQuote(){
+    if(dayOfWeekNumber == 0){
+        nameOfDay = 'Søndag';
+        quote = 'Netflix! Allll day long!'; 
+    }
+    else if(dayOfWeekNumber == 1){
+        nameOfDay = 'Mandag';
+        quote = 'Ny uke - nye muligheter!';
+    }
+    else if(dayOfWeekNumber == 2){
+        nameOfDay = 'Tirsdag';
+        quote = ' - i dag er det Týr sin dag - ';
+    }
+    else if(dayOfWeekNumber == 3){
+        nameOfDay = 'Onsdag';
+        quote = 'Halvveis til helg! ';
+    }
+    else if(dayOfWeekNumber == 4){
+        nameOfDay = 'Torsdag';
+        quote = 'Husk å ta den klesvaska,da!';
+    }
+    else if(dayOfWeekNumber == 5){
+        nameOfDay = 'Fredag';
+        quote = 'Freddan er her! Og snart er det helg!';
+    }
+    else if(dayOfWeekNumber == 6){
+        nameOfDay = 'Lørdag';
+        quote = 'HELG! #PartyMode';
+    }
+
+weekdayDiv.innerHTML = `${nameOfDay}`;
+quoteDiv.innerHTML = `${quote}`
+}
+
+
+</script>

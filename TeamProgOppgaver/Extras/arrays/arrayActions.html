@@ -1,0 +1,65 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <!-- <button onclick="showValues()">Show Values!</button> -->
+        <div id="output"></div>
+        <br>
+        <div id="inputOrEditDiv"><p>Add a New Value to the array - press enter to submit</p>
+        <input id="input" type="text" onkeydown=" if(event.keyCode === 13)addValues(this)">
+        </div>    
+
+        <script>
+        const outputDiv = document.getElementById("output");
+        const input = document.getElementById("input");
+        const inputOrEditDiv = document.getElementById("inputOrEditDiv");
+
+        let arrayOfValues = ["cardoor ", "mordor ", "dumbledore "];
+
+        showValues();    
+        function showValues(){
+            outputDiv.innerHTML = 
+            `Array Items: 
+                 <ul>`;
+         
+                 for(index in arrayOfValues){
+                    outputDiv.innerHTML += 
+                    `<li>`
+                    + arrayOfValues[index] 
+                    + `<button onclick="engageEditMode(${index})">EDIT</button> <button onclick="removeValues(${index})">DELETE</button> 
+                    </li>`; 
+                };
+                `</ul>`;
+        }     
+
+        function addValues(fromInput){
+         arrayOfValues.push(fromInput.value);
+
+         showValues();
+        }   
+
+        function engageEditMode(arrayIndex){
+            inputOrEditDiv.innerHTML = `
+            <form onsubmit="editValues(${arrayIndex, this })">
+                Edit the currently selected value: 
+              <input type="text" placeholder="${arrayOfValues[arrayIndex]}" >
+              <input type="submit" value="Submit"> 
+            </form> 
+            `;
+            
+        }
+        function editValues(arrayIndex, editInput){
+            console.log("EDITVALUES");
+            console.log(editInput + "test!");
+            arrayOfValues[arrayIndex] = editInput.value;
+            showValues();
+        }
+
+        function removeValues(){
+
+        }
+
+        </script>
+    </body>
+</html>

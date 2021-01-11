@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Adjektivshistorie!</title>
+</head>
+<body>
+    <input type="text" onchange="submitWord(this)"> <-- her kan man legge inn flere ord i arrayen -enter for å submitte(men de forsvinner etter en refresh siden de ikke er algret i en database)
+    <div id="storyOutput"></div>
+    <button onclick="ranomizeArray()"> Test Story </button>
+
+    <script>
+    const output = document.getElementById("storyOutput");    
+    let allTheWords = ["Liten", "Snodig", "Temperert", "Baklengs", "Blå"];
+    let firstWord =  "__";
+    let secondWord = "__";
+    let thirdWord = "__";
+    let fourthWord = "__";
+    let fifthWord = "__";
+    
+    showStory();
+    function showStory(){
+        output.innerHTML= `
+        Det var en gang en ${firstWord} som var både ${secondWord}
+        og ${thirdWord} - men dette er jo helt ${fourthWord} og totalt
+         ${fifthWord}
+        `;
+    }
+
+    function submitWord(wordFromInput){
+        allTheWords.push(wordFromInput.value);
+    }
+
+    function ranomizeArray(){
+        let shuffled = allTheWords
+  .map((a) => ({sort: Math.random(), value: a}))
+  .sort((a, b) => a.sort - b.sort)
+  .map((a) => a.value)
+        
+        firstWord = shuffled[0];
+        secondWord = shuffled[1];
+        thirdWord = shuffled[2];
+        fourthWord = shuffled[3];
+        fifthWord = shuffled[4];
+        showStory();
+    }
+    
+
+
+    </script>
+</body>
+</html>

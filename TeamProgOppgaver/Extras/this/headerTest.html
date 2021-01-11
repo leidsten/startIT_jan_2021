@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="output"></div>
+    <script>
+    // const outputDiv = document.createElement("div");
+    // document.body.appendChild(outputDiv);
+
+    const outputDiv = document.getElementById("output");    
+    let headerSize = 7;
+
+    makeHTML();
+   
+    function makeHTML(){
+        outputDiv.innerHTML = `
+        <h${headerSize} onclick="increaseHeaderSize()">Increase Text Size By Clicking</h${headerSize}>
+        `;
+    }  
+
+    function increaseHeaderSize(){
+        headerSize--;
+        makeHTML();
+        decreaseHeaderSize();
+    }  
+
+    function decreaseHeaderSize(){
+        if(headerSize == 0){
+            headerSize = 7;
+        }
+        makeHTML();
+    }
+
+    </script>
+</body>
+</html>

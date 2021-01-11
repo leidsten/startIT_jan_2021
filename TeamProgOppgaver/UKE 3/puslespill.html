@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        
+        body{background-color: lightgoldenrodyellow;}
+        .selectDivs {
+            border: 2px solid black;
+            height: 50px;
+            width: 150px;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            float: left;
+        }
+
+        .answerBox {
+            clear: left;
+            width: 1200px;
+            height: 380px;
+            border: 1px solid gray;
+            background-color: rgb(241, 214, 177);
+            z-index: -1;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Puzzle w/this!</title>
+</head>
+
+<body>
+    
+    <div class="selectDivs" onclick="addToOutput(this)">
+        <img src="tigerparts/2.png">
+  </div>
+
+    <div class="selectDivs" onclick="addToOutput(this)"><img src="tigerparts/1.png"></div>
+    <br><br>
+    <div class="answerBox" id="output" onclick=selectOutput(this)></div>
+    <div class="answerBox"  onclick=selectOutput(this)></div>
+<!-- Like mange output diver som biter, selecte en der biten skal lande -->
+
+    <script>
+        let selectedOutput;
+        const outputDiv = document.getElementById('output');
+
+        function selectOutput(selectedPlace){
+            selectedOutput = selectedPlace;
+
+            console.log(selectedPlace, selectedOutput)
+        }
+
+        function addToOutput(clickedText) {
+            selectedOutput.innerHTML = clickedText.innerHTML;
+           // outputDiv.innerHTML += clickedText.innerHTML + '<br>';
+        }
+
+    </script>
+</body>
+
+</html>

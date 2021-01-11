@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <style>
+      body{
+       display: flex;
+       justify-content: center;
+       flex-direction: column;
+       margin-left:40%;
+       margin-bottom: 50%;
+      }
+      .askButton{
+        width: 200px;
+        height: 200px;
+      }
+      #output{
+        font-size: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="askButton" onclick="getRandomAnswerFromArray()">Ask the Magic 8-Ball</button> 
+    <div id="output"></div>
+    
+    <script>
+      const outputDiv = document.getElementById("output");  
+      const arrayOfAnswers = ["Go for it! GO!GO!GO!","I beg to differ","Nope.", "NICE.","Hmm. Maybe tomorrow. Definetly not at this moment. You would implode.", "ABSOLUTELY NOT!", "Yes, anything else would be quite stupid."];
+      let chosenAnswer;  
+
+      //if ! dersom indexen er et "negativt" svar - rød text - grønn om positivt -modulus 2 - alle partall er positive f.eks :D
+
+      function getRandomAnswerFromArray(){
+        let randomIndex = Math.floor(Math.random() * arrayOfAnswers.length);
+        
+        chosenAnswer = arrayOfAnswers[randomIndex];
+        outputDiv.innerHTML = chosenAnswer;
+      }  
+    </script>
+  </body>
+</html>
